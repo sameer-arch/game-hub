@@ -4,9 +4,8 @@ interface Platform {
 	slug: string;
 }
 
-import React from "react";
-import useData from "./useData";
-
-const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
+import platforms from "../../data/platforms";
+// const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
+const usePlatforms = () => ({ data: platforms, isLoading: false, error: null });
 
 export default usePlatforms;
